@@ -57,3 +57,33 @@ func (c *Client) makeRequest(method string, endpoint string, body []byte, params
 
 	return resp, nil
 }
+
+func (c *Client) makeRequestWebhook(method string, endpoint string, body []byte, params map[string]interface{}) (*http.Response, error) {
+	uri := fmt.Sprintf("%s%s", BaseURL, endpoint)
+
+	req, err := http.NewRequest(method, uri, bytes.NewBuffer(body))
+	if err != nil {
+		return nil, err
+	}
+
+	if method == http.MethodPost {
+		req.Header.Set("Content-Type", "application/json")
+	}
+
+	req.SetBasicAuth(c.accountId, c.secretKey)
+
+	if params != nil {
+		q := req.URL.Query()
+		for paramName, paramVal := range params {
+			q.Add(paramName, fmt.Sprintf("%v", paramVal))
+		}
+		req.URL.RawQuery = q.Encode()
+	}
+
+	resp, err := c.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+
+	return resp, nil
+}

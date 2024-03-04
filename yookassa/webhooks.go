@@ -27,7 +27,7 @@ func (w *WebhookHandler) AddWebhook(webhook *webhook.Webhook) (*webhook.Webhook,
 		return nil, err
 	}
 
-	resp, err := w.client.makeRequest(http.MethodPost, WebhookEndpoint, webhookJson, nil)
+	resp, err := w.client.makeRequestWebhook(http.MethodPost, WebhookEndpoint, webhookJson, nil)
 	if err != nil {
 		return nil, err
 	}
@@ -50,7 +50,7 @@ func (w *WebhookHandler) AddWebhook(webhook *webhook.Webhook) (*webhook.Webhook,
 }
 
 func (w *WebhookHandler) GetAllWebhooks() ([]webhook.Webhook, error) {
-	resp, err := w.client.makeRequest(http.MethodGet, WebhookEndpoint, nil, nil)
+	resp, err := w.client.makeRequestWebhook(http.MethodGet, WebhookEndpoint, nil, nil)
 	if err != nil {
 		return nil, err
 	}
@@ -75,7 +75,7 @@ func (w *WebhookHandler) GetAllWebhooks() ([]webhook.Webhook, error) {
 
 func (w *WebhookHandler) RemoveWebhook(id string) error {
 	endpoint := fmt.Sprintf("%s/%s", WebhookEndpoint, id)
-	resp, err := w.client.makeRequest(http.MethodDelete, endpoint, nil, nil)
+	resp, err := w.client.makeRequestWebhook(http.MethodDelete, endpoint, nil, nil)
 	if err != nil {
 		return err
 	}
