@@ -2,7 +2,7 @@ package payout
 
 import (
 	"encoding/json"
-	yoopayout "github.com/rvinnie/yookassa-sdk-go/yookassa/payout"
+	yoopayout "github.com/k6mil6/yookassa-sdk-go/yookassa/payout"
 	"reflect"
 	"testing"
 )

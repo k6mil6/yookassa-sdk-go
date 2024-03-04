@@ -21,8 +21,8 @@ SDK позволяет создавать, подтверждать, отмен�
 
 ```go
 import (
-	"github.com/rvinnie/yookassa-sdk-go/yookassa"
-	"github.com/rvinnie/yookassa-sdk-go/yookassa/payment"
+	"github.com/k6mil6/yookassa-sdk-go/yookassa"
+	"github.com/k6mil6/yookassa-sdk-go/yookassa/payment"
 )
 
 func main() {

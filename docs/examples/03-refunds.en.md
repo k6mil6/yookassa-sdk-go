@@ -23,8 +23,8 @@ In response to the request, the `Refund` object will come in the current status.
 
 ```go
 import (
-    "github.com/rvinnie/yookassa-sdk-go/yookassa"
-    "github.com/rvinnie/yookassa-sdk-go/yookassa/refund"
+    "github.com/k6mil6/yookassa-sdk-go/yookassa"
+    "github.com/k6mil6/yookassa-sdk-go/yookassa/refund"
 )
 
 func main() {

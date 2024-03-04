@@ -2,8 +2,8 @@
 package yoosettings
 
 import (
-	"github.com/rvinnie/yookassa-sdk-go/yookassa/payment"
-	"github.com/rvinnie/yookassa-sdk-go/yookassa/payout"
+	"github.com/k6mil6/yookassa-sdk-go/yookassa/payment"
+	"github.com/k6mil6/yookassa-sdk-go/yookassa/payout"
 )
 
 // Settings object contains relevant information about the configuration of the store or gateway.
