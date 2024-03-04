@@ -21,6 +21,9 @@ func NewWebhookHandler(client *Client) *WebhookHandler {
 	return &WebhookHandler{client: client}
 }
 
+//THIS CAN ONLY BE USED IF USER HAS OAUTH
+//IT SHOULD BE FIXED, IT IS NEEDED TO WORK WITH OAUTH
+
 func (w *WebhookHandler) AddWebhook(webhook *webhook.Webhook) (*webhook.Webhook, error) {
 	webhookJson, err := json.Marshal(webhook)
 	if err != nil {

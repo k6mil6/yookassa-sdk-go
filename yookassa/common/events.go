@@ -1,4 +1,4 @@
-package webhook
+package yoocommon
 
 type Event string
 

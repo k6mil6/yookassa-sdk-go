@@ -58,6 +58,7 @@ func (c *Client) makeRequest(method string, endpoint string, body []byte, params
 	return resp, nil
 }
 
+// IT SHOULD BE FIXED, IT IS NEEDED TO WORK WITH OAUTH
 func (c *Client) makeRequestWebhook(method string, endpoint string, body []byte, params map[string]interface{}) (*http.Response, error) {
 	uri := fmt.Sprintf("%s%s", BaseURL, endpoint)
 
